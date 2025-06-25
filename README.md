@@ -4,11 +4,27 @@
 
 ## Development
 
+Create stripe products and stripe price table from stripe.com dashboard.
+Create .env file with stripe keys etc. Refer .env.example
+
 Run the dev server:
 
 ```sh
 npm run dev
 ```
+
+Tap "Create Stripe Customer" button to create, or if you have one already, add it to .env file.
+
+Connect and Open via iPhone device, through same network, i.e. http://<local machine ip>:5173/
+
+Tap "Go To Buy" button, and see customer session change every time the page is re-loaded.
+On Buy page with stripe-price-table, tap "subscribe" button to proceed to pre-built checkout.
+Check "customer@example.com" is gray out and can not be edited (to check customer-session is working with specified customerId).
+Go back to previous Buy page, and press "subscribe" button again. Repeat this steps for some time.
+Check at some point, on pre-build checkout page, email is editable. type in some email, and proceed payment.
+Check at stripe dashboard customer page, and now you will see "Guest" customer is created, which is not
+expected (a bug.)
+
 
 ## Deployment
 
